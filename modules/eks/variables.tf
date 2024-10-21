@@ -1,3 +1,9 @@
+
+variable "vpc_id" {
+  description = "VPC ID"
+  type        = string
+}
+
 variable "prefix" {
   description = "Prefix for the resources"
   type        = string
@@ -13,6 +19,11 @@ variable "retention_days" {
   type        = number
 }
 
+variable "subnet_ids" {
+  description = "Subnet IDs"
+  type        = list(string)
+}
+
 variable "desired_size" {
   description = "Desired size for the EKS node group"
   type        = number
@@ -26,9 +37,4 @@ variable "max_size" {
 variable "min_size" {
   description = "Min size for the EKS node group"
   type        = number
-}
-
-variable "vpc_cidr_block" {
-  description = "CIDR block for the VPC"
-  type        = string
 }
